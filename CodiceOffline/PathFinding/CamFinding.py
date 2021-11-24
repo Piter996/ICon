@@ -18,9 +18,8 @@ ROOT_DIR = os.getcwd()
 print(ROOT_DIR)
 
 # File da cui caricare la mappa
-#MAP_FILE_PATH = ROOT_DIR + "\\CodiceOffline\\res\\CamLocation\\Cam.csv"
-MAP_FILE_PATH = 'C:/Users/P1t3r/Documents/GitHub/ICon/CodiceOffline/res/CamLocations/Cam.csv'
-
+MAP_FILE_PATH = 'C:\\Users\\Pietro\\Documents\\GitHub\\ICon\\CodiceOffline\\res\\CamLocations\\Cam.csv'
+print ('printing path :' + MAP_FILE_PATH)
 """
 Crea una mappa nella cartella corrente, dato un file .csv
 E' possibile passare in input una lista di Location da contrassegnare diversamente sulla mappa
