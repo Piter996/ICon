@@ -2,23 +2,22 @@
 Classe che inizializza le telecamere
 
 '''
-
+import os
 from os import X_OK, getcwd, mkdir
 
 #Creazione della telecamera
-def Camera(object):
+class Camera:
 
-    def _init_(self,ID,Y,X,name):
-        self.ID = ID
+    def _init_(self,Y,X,name):
         self.Y = Y
         self.X = 1
         self.name = name
-        self.PATH = mkdir(getcwd + 'res\\output\\'+ name +'\\')
+        self.PATH = mkdir((os.getcwd()) + '\\res\\output\\'+ name +'\\')
         print('camera creata')
     
     def getX(self):
 
-        return self.X
+        print(self.X)
 
     def getY(self):
 
@@ -41,4 +40,8 @@ def REC(object):
         self.frame = frame
         print('frame creato')
 
+camN = Camera
 
+camN._init_(camN,1,2,'name')
+
+camN.getX

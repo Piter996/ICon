@@ -54,7 +54,7 @@ def REC(object):
 
 camN  = Camera.__init__(0,1,3,"name")
 
-print(camN.getX)
+print(camN)
 ###########
 '''
 
