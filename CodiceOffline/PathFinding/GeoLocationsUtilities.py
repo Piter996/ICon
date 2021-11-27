@@ -57,19 +57,17 @@ ad esempio: P1 = (x1, y1) e P2 = (x2, y2) che identificheranno un percorso.
 I punti verranno mappati in nodi, e le coppie di punti saranno unite in archi.
 '''
 def loadLocations(strPath):
-  #  nodes = []
-  #  arcs = []
+    nodes = []
+
     locs_csv = pd.read_csv(strPath)
     
     for i, l in locs_csv.iterrows():
         l1 = Node(Location(l["X1"], l["Y1"], l["Name"]))
-        l2 = Node(Location(l["X2"], l["Y2"], l["Name"]))
+
         # Se i nodi non sono già presenti tra quelli mappati
-   #     if l1 not in nodes:
-    #        nodes.append(l1)
-     #   if l2 not in nodes:
-      #      nodes.append(l2)
-       # arcs.append(Arc(l1, l2, l["Length"]))
+        if l1 not in nodes:
+            nodes.append(l1)
+
     
-    return #nodes
+    return nodes
      

@@ -2,7 +2,9 @@ import numpy as np
 import cv2 as cv
 import glob
 import imageio
-import os
+
+from os import X_OK, getcwd, mkdir
+from LinkCam import Camera
 
 FPS_REQUIRED = 5
 FPS=5
@@ -32,6 +34,31 @@ SCALE =  0.00392      #provata
 #costanti operative
 MIN_CONFIDENCE = 0.5  #previsioni con confidence > 0.5
 THRESHOLD = 0.3
+N_CAMERE = 10
+
+
+
+#Caricamento delle registrazioni
+def REC(object):
+
+    def _init_(self,Camera,ret,frame):
+        self.Camera = Camera
+        self.ret = ret
+        self.frame = frame
+        print('frame creato')
+
+
+
+
+
+
+camN  = Camera.__init__(0,1,3,"name")
+
+print(camN.getX)
+###########
+'''
+
+
 
 #mi restituisce i nomi dei layer di output
 def get_output_layers(net):
@@ -87,6 +114,7 @@ VIDEO.set(cv.CAP_PROP_FPS, FPS)
 
 fps = VIDEO.get(cv.CAP_PROP_FPS)
 
+#ret(controlla che ci sia un frame successivo), frame(acquisice il frame)
 ret,frame = VIDEO.read()
 
 i = 0
@@ -109,7 +137,13 @@ while(ret):
     #acquisisco l'output - La rete ha tanti layers di output - uno per ogni detection che effettua
     outs = net.forward(get_output_layers(net))
 
-    '''
+
+###
+
+
+
+###
+    
         esamino l'output --> un array di array di coordinate.
                     La dimensione dell'array è pari al numero di elementi individuati da YOLO.
                     Per ogni elemento vi è un array che contiene:
@@ -120,7 +154,10 @@ while(ret):
                                 è lo inserisco nell'array dei nomi degli oggetti individuabili
                                 e ottengo l'etichetta dell'oggetto.
 
-        '''
+        ###
+
+        
+        ###
     confidences = []  # tutte le probabilità di successo
     boxes = []  # tutti i box degli oggetti individuati (persone)
     centroids = []  # tutti i centroidi degli oggetti individuati
@@ -213,3 +250,4 @@ cv.destroyAllWindows()
 #os.remove('./salvataggio')
 
 
+'''
