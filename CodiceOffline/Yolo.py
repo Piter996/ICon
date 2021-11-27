@@ -38,23 +38,13 @@ N_CAMERE = 10
 
 
 
-#Caricamento delle registrazioni
-def REC(object):
+#creazione dell'oggetto Camera
+camN = Camera
 
-    def _init_(self,Camera,ret,frame):
-        self.Camera = Camera
-        self.ret = ret
-        self.frame = frame
-        print('frame creato')
+#Inizializzazione della Camera
+camN._init_(camN,1,2,'name')
 
-
-
-
-
-
-camN  = Camera.__init__(0,1,3,"name")
-
-print(camN)
+print(camN.getName(camN) + str(camN.getX(camN)) + str(camN.getY(camN)))
 ###########
 '''
 

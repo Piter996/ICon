@@ -10,14 +10,21 @@ class Camera:
 
     def _init_(self,Y,X,name):
         self.Y = Y
-        self.X = 1
+        self.X = X
         self.name = name
-        self.PATH = mkdir((os.getcwd()) + '\\res\\output\\'+ name +'\\')
+
+        Def_Dir = (os.getcwd()) + '\\res\\output\\'+ name +'\\'
+
+        #Controlla che la cartella che andremo a creare non sia gia presente
+        print(os.path.exists(Def_Dir))
+        if not os.path.exists(Def_Dir):
+                    self.PATH = mkdir((os.getcwd()) + '\\res\\output\\'+ name +'\\')
+
         print('camera creata')
     
     def getX(self):
 
-        print(self.X)
+        return self.X
 
     def getY(self):
 
@@ -40,8 +47,3 @@ def REC(object):
         self.frame = frame
         print('frame creato')
 
-camN = Camera
-
-camN._init_(camN,1,2,'name')
-
-camN.getX
