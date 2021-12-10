@@ -18,16 +18,16 @@ Tabella di "Luogo":
 	+----------------+-----------------+-----------------+
 	|    Luogo       |  Posizione(0)   |  Posizione(1)   | 
 	+----------------+-----------------+-----------------+
-	|    Luogo(0)    | 0.20            | 0.25            |
+	|    Luogo(0)    | 0.50            | 0.40            |
 	+----------------+-----------------+-----------------+
 	|    Luogo(1)    | 0.30            | 0.30            |
 	+----------------+-----------------+-----------------+
-	|    Luogo(2)    | 0.50            | 0.45            |
+	|    Luogo(2)    | 0.20            | 0.30            |
 	+----------------+-----------------+-----------------+
-
-	- Luogo(1): Piazza
-	- Luogo(2): Strada
-	- Luogo(3): Vicolo
+	
+	- Luogo(0): Vicolo
+	- Luogo(1): Strada
+	- Luogo(2): Piazza
 
 
 
@@ -35,15 +35,15 @@ Tabella di "Luogo":
 Tabella di "Giorno":
 	
 	+--------------+------+
-	|  Giorno(0)   | 0.35 |
+	|  Giorno(0)   | 0.65 |
 	+--------------+------+
-	|  Giorno(1)   | 0.65 |
+	|  Giorno(1)   | 0.35 |
 	+--------------+------+
-	
-	- Giorno(0): Feriale
-	- Giorno(1): Festivo
+		
+	- Giorno(0): Festivo
+	- Giorno(1): Feriale
 
-#Abbiamo deciso di mettere solo pestivi e feriali perchè un ipotetico mercoledì potrebbe essere un giorno festivo e quindi 
+#Abbiamo deciso di mettere solo festivi e feriali perchè un ipotetico mercoledì potrebbe essere un giorno festivo e quindi 
 maggior probabilità di violenza
 
 
@@ -66,7 +66,7 @@ Tabella di "Ora":
 Tabella di "Mole di persone":
 	
 	+-------------------+------+
-	| Mole di persone(0)| 0.25 |
+	| Mole di persone(0)| 0.20 |
 	+-------------------+------+
 	| Mole di persone(1)| 0.35 |
 	+-------------------+------+
