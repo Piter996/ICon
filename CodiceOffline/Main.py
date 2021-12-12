@@ -1,12 +1,20 @@
 import csv
+#from CodiceOffline.LinkCam import Sorveglianza
+import LinkCam 
+import pandas as pd
+
+PATH_CSV ="./res/CamLocations/Cam.csv"
+
+data = pd.read_csv(PATH_CSV, delimiter = ';', header = 0)
+printer = list(data)
+#Controller = Sorveglianza
+
+#Controller._init_(Controller)
 
 
-with open("C:/Users/Pietro/Documents/GitHub/ICon/CodiceOffline/res/CamLocations/Cam.csv", newline="") as filecsv:
+for item in printer:
+    #  Controller.update(Controller)
 
-  data = csv.reader(filecsv)
-  printer = list(data)
-
-  for item in printer:
      print(item)
 
 print ("Hi") 
