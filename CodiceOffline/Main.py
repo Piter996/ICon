@@ -1,4 +1,3 @@
-import csv
 #from CodiceOffline.LinkCam import Sorveglianza
 import LinkCam 
 import pandas as pd
@@ -7,7 +6,7 @@ PATH_CSV ="./res/CamLocations/Cam.csv"
 
 data = pd.read_csv(PATH_CSV, delimiter = ';', header = 0)
 printer = list(data)
-#Controller = Sorveglianza
+Controller = 
 
 #Controller._init_(Controller)
 
