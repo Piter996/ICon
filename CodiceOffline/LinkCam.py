@@ -48,13 +48,16 @@ def REC(object):
         print('frame creato')
 
 class Sorveglianza:
-       
-        def _init_(self):
-            self.Y = []
-            self.X = []
-            self.ID = []
 
-        def update (self,Y,X,ID):
-            self.Y.append(Y)
-            self.X.append(X)
-            self.ID.append(ID)
+    def _init_(self):
+        self.Y = []
+        self.X = []
+        self.ID = []
+
+
+    def update (self,Y, X, ID):
+        self.Y.append(Y)
+        self.X.append(X)
+        self.ID.append(ID)
+
+    
