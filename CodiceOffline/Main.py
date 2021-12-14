@@ -1,20 +1,28 @@
 from LinkCam import *
+from os import *
+
 import pandas as pd
 
-#PATH_CSV =".\\res\\CamLocations\\Cam.csv"
+PATH_CSV =os.getcwd() + '\\res\\CamLocations\\Cam.csv'
 
-data = pd.read_csv('C:\\Users\\Pietro\\Documents\\GitHub\\ICon\\CodiceOffline\\res\\CamLocations\\Cam.csv', delimiter = ';', header = 0)
+PATH_CSV = 'C:\\Users\\P1T3R\\Documents\\GitHub\\ICon\\CodiceOffline\\res\\CamLocations\\Cam.csv'
+
+print (PATH_CSV)
+
+Column_X = 'X'
+
+data = pd.read_csv(PATH_CSV, sep = ';')
+data = pd.reindex_axis(pd.columns.intersection('X'), 1)
+
 printer = list(data)
 Controller = Sorveglianza
-
+print (len(printer))
 Controller._init_(Controller)
 
+for i in data:
+    # Controller.update(Controller)
 
-for item in printer:
-    #  Controller.update(Controller)
-
-     print(item)
+     print(data)
 
 print ("Hi") 
 
-    
