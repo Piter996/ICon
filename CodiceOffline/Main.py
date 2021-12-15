@@ -44,4 +44,4 @@ for i in import_ID:
     Controller.update_ID(Controller,i)
 
 
-Controller.show_CAM
+Controller.show_CAM(Controller)

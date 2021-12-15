@@ -70,5 +70,7 @@ class Sorveglianza:
 
 
     def show_CAM (self):
-        for i in self.X:
-            print(i)
+
+        for i,h,j in zip(self.X,self.Y,self.ID):
+
+            print(i , h , j)
