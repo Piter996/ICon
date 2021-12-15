@@ -30,18 +30,10 @@ import_Y = data_Y.to_numpy()
 import_ID = data_ID.to_numpy()
 
 
-for i in import_X:
+for i,h,j in zip(import_X,import_Y,import_ID):
     
     Controller.update_X(Controller,i)
-
-    #print (i)
-    #print("end")
-
-for i in import_Y:
-    Controller.update_Y(Controller,i)
-
-for i in import_ID:
-    Controller.update_ID(Controller,i)
-
+    Controller.update_Y(Controller,h)
+    Controller.update_ID(Controller,j)
 
 Controller.show_CAM(Controller)
