@@ -55,9 +55,20 @@ class Sorveglianza:
         self.ID = []
 
 
-    def update (self,Y, X, ID):
+    def update_Y (self,Y):
         self.Y.append(Y)
-        self.X.append(X)
-        self.ID.append(ID)
+        #print("Done!")
 
-    
+    def update_X (self,X):
+        self.X.append(X)
+        #print("Done!")
+
+
+    def update_ID (self,ID):
+        self.ID.append(ID)
+        #print("Done!")
+
+
+    def show_CAM (self):
+        for i in self.X:
+            print(i)
