@@ -6,6 +6,7 @@ class Sorveglianza:
         self.Y = []
         self.X = []
         self.ID = []
+        self.type = []
 
 
     def update_Y (self,Y):
@@ -21,9 +22,14 @@ class Sorveglianza:
         self.ID.append(ID)
         #print("Done!")
 
+    # 0 = Vicolo, 1 = Via, 2 = Piazza
+    def update_TYPE (self,TYPE):
+        self.type.append(TYPE)
+        #print("Done!")
+
 
     def show_CAM (self):
 
-        for i,h,j in zip(self.X,self.Y,self.ID):
+        for i,h,j,k in zip(self.X,self.Y,self.ID,self.type):
 
-            print(i , h , j)
+            print(i , h , j, k)

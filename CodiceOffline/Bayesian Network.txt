@@ -48,14 +48,14 @@ Piazza (
 piazza aldo moro, (41.118333, 16.870000)
 gramsci,(41.118333, 16.890000)
 redentore,(41.118889, 16.856389) 
-giulio cesare, 
-parco 2 giugno, 
-piazza unmberto I, 
-mercantile, 
-largo albicocca, 
-piazza ferrarese,
- piazza san nicola,
-piazza armando diaz
+giulio cesare,(41.112222, 16.862778)
+parco 2 giugno,(41.102500, 16.874722) 
+piazza unmberto I,(41.120556, 16.869167)
+mercantile,(41.128056, 16.871944)
+largo albicocca,(41.127222, 16.867778)
+piazza ferrarese,(41.127222, 16.871667)
+piazza san nicola,(41.130278, 16.869444)
+piazza armando diaz(41.122500, 16.878056)
 
 
 
