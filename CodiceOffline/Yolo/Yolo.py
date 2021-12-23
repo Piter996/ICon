@@ -1,10 +1,8 @@
 import numpy as np 
 import cv2 as cv
-import glob
 import imageio
 
-from os import X_OK, getcwd, mkdir
-from LinkCam import Camera
+import os
 
 FPS_REQUIRED = 5
 FPS=5
@@ -19,13 +17,13 @@ PATH_VAL_VIDEOS = PATH + '/dataset video/val/'
 PATH_VAL_VIDEOS_FIGHT = PATH_TRAIN_VIDEOS + 'Fight/*.mp4'
 PATH_VAL_VIDEOS_NONFIGHT = PATH_TRAIN_VIDEOS + 'NonFight/*.mp4'
 
-PATH_TO_SAVE = './salvataggio/' 
+PATH_TO_SAVE = 'C:\\Users\\P1T3R\\Documents\\GitHub\\ICon\\CodiceOffline\\res\\output' 
 
 #Yolo things
-PATH_YOLO = './'
-PATH_YOLO_TXT = './yolov3.txt'
-PATH_YOLO_CFG = './yolov3.cfg'
-PATH_YOLO_WEIGHTS = './yolov3.weights'
+PATH_YOLO = 'C:\\Users\\P1T3R\\Documents\\GitHub\\ICon\\CodiceOffline\\Yolo'
+PATH_YOLO_TXT = 'C:\\Users\\P1T3R\\Documents\\GitHub\\ICon\\CodiceOffline\\Yolo\\yolo configuration\\yolov3.txt'
+PATH_YOLO_CFG = 'C:\\Users\\P1T3R\\Documents\\GitHub\\ICon\\CodiceOffline\\Yolo\\yolo configuration\\yolov3.cfg'
+PATH_YOLO_WEIGHTS = 'C:\\Users\\P1T3R\\Documents\\GitHub\\ICon\\CodiceOffline\\Yolo\\yolo configuration\\yolov3.weights'
 
 #Costanti sulle immagini
 IMG_SIZE = (416,416)  #dim fissa per YOLO
@@ -35,19 +33,6 @@ SCALE =  0.00392      #provata
 MIN_CONFIDENCE = 0.5  #previsioni con confidence > 0.5
 THRESHOLD = 0.3
 N_CAMERE = 10
-
-
-
-#creazione dell'oggetto Camera
-camN = Camera
-
-#Inizializzazione della Camera
-camN._init_(camN,1,2,'name')
-
-print(camN.getName(camN) + str(camN.getX(camN)) + str(camN.getY(camN)))
-###########
-'''
-
 
 
 #mi restituisce i nomi dei layer di output
@@ -98,7 +83,7 @@ net = cv.dnn.readNet(PATH_YOLO_CFG,PATH_YOLO_WEIGHTS)
 #VIDEO= glob.glob(PATH_TRAIN_VIDEOS+ '/Fight/_2RYnSFPD_U_0.mp4')
 #VIDEO = cv.VideoCapture(PATH_TRAIN_VIDEOS + '/Fight/_2RYnSFPD_U_0.mp4')
 
-VIDEO = cv.VideoCapture('./AB.mp4')
+VIDEO = cv.VideoCapture('C:\\Users\\P1T3R\\Documents\\GitHub\\ICon\\CodiceOffline\\res\\Video\\AB.mp4')
 
 VIDEO.set(cv.CAP_PROP_FPS, FPS)
 
@@ -126,32 +111,12 @@ while(ret):
 
     #acquisisco l'output - La rete ha tanti layers di output - uno per ogni detection che effettua
     outs = net.forward(get_output_layers(net))
-
-
-###
-
-
-
-###
-    
-        esamino l'output --> un array di array di coordinate.
-                    La dimensione dell'array è pari al numero di elementi individuati da YOLO.
-                    Per ogni elemento vi è un array che contiene:
-                                i primi 5 punti --> coordinate bounding box
-                                i restanti --> probabilità di appartenenza ad una classe
-                    La probabilità più alta rappresenta la classe dell'oggetto individuato:
-                                prendo il suo indice in un array dedicato solo agli scores (probabilità)
-                                è lo inserisco nell'array dei nomi degli oggetti individuabili
-                                e ottengo l'etichetta dell'oggetto.
-
-        ###
-
         
-        ###
     confidences = []  # tutte le probabilità di successo
     boxes = []  # tutti i box degli oggetti individuati (persone)
     centroids = []  # tutti i centroidi degli oggetti individuati
     class_names = []  # etichette di ogni oggetto trovato, in questo caso ci saranno solo etichette di tipo 'person', quindi sarebbe anche inutile utilizzare questa lista
+
     for out in outs:
         for detect in out:
             scores = detect[5:]  # creo una lista dedicata agli scores
@@ -177,38 +142,37 @@ while(ret):
 
     # applico la Non Max Suppression --> IOU più basso => miglior bounding box tra i tanti che ne vengono generati
     # questo metodo è utile infatti anche per associare un solo box per ogni oggetto, oltre che il migliore possibile
-    boxes, centroids = non_max_suppression(boxes=boxes,
-                                            centroids=centroids,
-                                            confidences=confidences,
-                                            min_confidence=MIN_CONFIDENCE,
-                                            threshold=THRESHOLD)
+                boxes, centroids = non_max_suppression(boxes = boxes,
+                centroids = centroids, 
+                confidences = confidences, 
+                min_confidence = MIN_CONFIDENCE, 
+                threshold = THRESHOLD)
 
 
 
-    print(f"\nPersone individuate nell'immagine : {len(centroids)}, frame n°:{i}\n")
+                print(f"\nPersone individuate nell'immagine : {len(centroids)}, frame n°:{i}\n")
     # print("Immagine originale")
         #cv2_imshow(img)
-    img = show_detections_results(boxes=boxes, class_names=class_names,
+                img = show_detections_results(boxes=boxes, class_names=class_names,
                                   confidences=confidences,
                                     img=img)
-    print("Immagine elaborata\n")
+                print("Immagine elaborata\n")
     #img = cv.resize(img, (600, 420))  #mo vediamo
     #cv2_imshow(img) #solo con colab cv2_imshow(img)     #con i rettangoli
 
-    nome_immagine_salvata = 'precessed_img' + str(i) + '.jpg'
+                nome_immagine_salvata = 'precessed_img' + str(i) + '.jpg'
+                ret, frame = VIDEO.read()
 
-    ret, frame = VIDEO.read()
-
-    key = cv.waitKey(1)
+                key = cv.waitKey(1)
     # if(key == ord("e")):
     #    break
-    if i % 5 == 0 :
+                if i % 5 == 0 :
 
-        cv.imwrite(PATH_TO_SAVE + nome_immagine_salvata, img) # save frame as JPEG file
-        i = i+1
+                 cv.imwrite(PATH_TO_SAVE + nome_immagine_salvata, img) # save frame as JPEG file
+                 i = i+1
 
-    else :
-        i = i+1
+                else :
+                 i = i+1
 #n_frame = i
 #i = 0
 #while i != n_frame :
@@ -222,13 +186,14 @@ while(ret):
 
 fps = VIDEO.get(cv.CAP_PROP_FPS)
 
-jpg_dir = './salvataggio'
+jpg_dir = 'C:\\Users\\P1T3R\\Documents\\GitHub\\ICon\\CodiceOffline\\res\\output'
 images = []
 for file_name in sorted(os.listdir(jpg_dir)):
     if file_name.endswith('.jpg'):
         file_path = os.path.join(jpg_dir, file_name)
         images.append(imageio.imread(file_path))
-imageio.mimsave('movie.gif', images)
+
+#imageio.mimsave('movie.gif', images)
 
 
 print("Fine Elaborazione")
@@ -238,6 +203,3 @@ VIDEO.release()
 cv.destroyAllWindows()
 
 #os.remove('./salvataggio')
-
-
-'''
