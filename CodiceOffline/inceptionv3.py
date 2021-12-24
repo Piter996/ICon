@@ -8,13 +8,27 @@ Original file is located at
 
 Extract frames from video
 """
-
 import glob
 import os
-import sys
-import sklearn
+import pickle
+import warnings
+
 import cv2
-import tensorflow
+import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+from imutils import paths
+from keras.layers import Input
+from keras.layers.core import Dense, Dropout, Flatten
+from keras.layers.pooling import AveragePooling2D
+from keras.models import Model
+from keras.preprocessing.image import ImageDataGenerator
+from sklearn.metrics import classification_report
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelBinarizer
+from tensorflow.keras.applications import InceptionV3
+from tensorflow.keras.optimizers import SGD
+from tensorflow.keras.utils import to_categorical
 from tqdm import tqdm
 
 PATH_violence = "/content/drive/MyDrive/InceptionV3/dataset_ridotto/violenza"
@@ -24,6 +38,7 @@ os.makedirs('./data/Violence',exist_ok=True)
 for path in tqdm(glob.glob(PATH_violence+'/*')):
     fname = os.path.basename(path).split('.')[0]
     vidcap = cv2.VideoCapture(path)
+    # noinspection PyRedeclaration
     success,image = vidcap.read()
     count = 0
     while success:
@@ -46,34 +61,8 @@ for path in tqdm(glob.glob(PATH_nonviolence+'/*')):
 
 """Creating the video classification model"""
 
-import matplotlib
 
 matplotlib.use("Agg")
-
-import argparse
-import os
-import pickle
-import warnings
-
-import cv2
-import matplotlib.pyplot as plt
-import numpy as np
-from imutils import paths
-from keras.layers import Input
-from keras.layers.core import Dense, Dropout, Flatten
-from keras.layers.pooling import AveragePooling2D
-from keras.models import Model
-# import the necessary packages
-from keras.preprocessing.image import ImageDataGenerator
-from sklearn.metrics import classification_report
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelBinarizer
-from tensorflow.keras.applications import InceptionV3, MobileNetV2
-from tensorflow.keras.applications.mobilenet import MobileNet
-from tensorflow.keras.optimizers import SGD
-from tensorflow.keras.utils import to_categorical
-from tensorflow.python.keras.applications.resnet import ResNet50
-from tqdm import tqdm
 
 warnings.filterwarnings('ignore',category=FutureWarning)
 warnings.filterwarnings('ignore',category=DeprecationWarning)
@@ -89,7 +78,7 @@ args = {
 
 # initialize the set of labels from the spots activity dataset we are
 # going to train our network on
-LABELS = set(["Violence", "NonViolence"])
+LABELS = {"Violence", "NonViolence"}
 
 # grab the list of images in our dataset directory, then initialize
 # the list of data (i.e., images) and class images
@@ -214,7 +203,7 @@ print("[INFO] evaluating network...")
 print('-'*100)
 predictions = model.predict(testX, batch_size=32)
 print(classification_report(testY.argmax(axis=1),
-	predictions.argmax(axis=1), target_names=lb.classes_))
+    predictions.argmax(axis=1), target_names=lb.classes_))
 
 # plot the training loss and accuracy
 print('-'*100)
@@ -246,12 +235,10 @@ f.close()
 
 """Predict the video for violence/ non-violence"""
 
-import argparse
 import pickle
 from collections import deque
 
 import cv2
-import matplotlib.pyplot as plt
 import numpy as np
 from keras.models import load_model
 
@@ -279,12 +266,10 @@ Q = deque(maxlen=args["size"])
 # frame dimensions
 vpath = args["input"]
 if args["input"] == 'camera':
-	vpath = 0
+    vpath = 0
 vs = cv2.VideoCapture(vpath)
 writer = None
 (W, H) = (None, None)
-
-from google.colab.patches import cv2_imshow
 
 # loop over frames from the video file stream
 while True:
@@ -351,7 +336,7 @@ while True:
     writer.write(output)
 
     # show the output image
-    cv2_imshow(output) 
+ #   cv2.imshow(output)
     key = cv2.waitKey(1) & 0xFF
 
     # if the `q` key was pressed, break from the loop
