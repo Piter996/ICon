@@ -1,49 +1,35 @@
-'''
-Classe che inizializza le telecamere
+#Classe che inizializza l'impianto di Sorveglianza
 
-'''
-import os
-from os import X_OK, getcwd, mkdir
+class Sorveglianza:
 
-#Creazione della telecamera
-class Camera:
+    def _init_(self):
+        self.Y = []
+        self.X = []
+        self.ID = []
+        self.type = []
 
-    def _init_(self,Y,X,name):
-        self.Y = Y
-        self.X = X
-        self.name = name
 
-        Def_Dir = (os.getcwd()) + '\\res\\output\\'+ name +'\\'
+    def update_Y (self,Y):
+        self.Y.append(Y)
+        #print("Done!")
 
-        #Controlla che la cartella che andremo a creare non sia gia presente
-        print(os.path.exists(Def_Dir))
-        if not os.path.exists(Def_Dir):
-                    self.PATH = mkdir((os.getcwd()) + '\\res\\output\\'+ name +'\\')
+    def update_X (self,X):
+        self.X.append(X)
+        #print("Done!")
 
-        print('camera creata')
-    
-    def getX(self):
 
-        return self.X
+    def update_ID (self,ID):
+        self.ID.append(ID)
+        #print("Done!")
 
-    def getY(self):
+    # 0 = Vicolo, 1 = Via, 2 = Piazza
+    def update_TYPE (self,TYPE):
+        self.type.append(TYPE)
+        #print("Done!")
 
-        return self.Y
 
-    def getPATH(self):
-        return self.PATH
+    def show_CAM (self):
 
-    def getName(self):
-        return self.name
+        for i,h,j,k in zip(self.X,self.Y,self.ID,self.type):
 
-   
-
-#Caricamento delle registrazioni
-def REC(object):
-
-    def _init_(self,Camera,ret,frame):
-        self.Camera = Camera
-        self.ret = ret
-        self.frame = frame
-        print('frame creato')
-
+            print(i , h , j, k)
