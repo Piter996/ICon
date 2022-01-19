@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c786fc1-2e22-440f-ba67-6d70024f2ec2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/ICon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ICon.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CodiceOffline/inceptionv3.py" beforeDir="false" afterPath="$PROJECT_DIR$/CodiceOffline/inceptionv3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodiceOffline/model/lb.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/CodiceOffline/model/lb.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodiceOffline/plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/CodiceOffline/plot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodiceOffline/res/output/movie.gif" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +129,7 @@
       <workItem from="1642025851693" duration="9906000" />
       <workItem from="1642159159308" duration="20000000" />
       <workItem from="1642424195732" duration="2191000" />
-      <workItem from="1642441340542" duration="6998000" />
+      <workItem from="1642441340542" duration="17405000" />
     </task>
     <servers />
   </component>
@@ -146,7 +148,7 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ICon$Main.coverage" NAME="inceptionv31 Coverage Results" MODIFIED="1642494747545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CodiceOffline" />
+    <SUITE FILE_PATH="coverage/ICon$Main.coverage" NAME="inceptionv31 Coverage Results" MODIFIED="1642630661884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CodiceOffline" />
     <SUITE FILE_PATH="coverage/ICon$inceptionv3.coverage" NAME="inceptionv3 Coverage Results" MODIFIED="1642086806835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CodiceOffline" />
   </component>
 </project>

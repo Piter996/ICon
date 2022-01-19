@@ -25,10 +25,10 @@ import pickle
 import cv2
 
 
-PATH_violence = "C:/Users/P1T3R/Desktop/InceptionV3/dataset_ridotto/violenza"
-PATH_nonviolence = 'C:/Users/P1T3R/Desktop/InceptionV3/dataset_ridott/nonViolenza'
+PATH_violence = 'dataset/violenza'
+PATH_nonviolence = 'dataset/nonViolenza'
 
-os.makedirs('C:/Users/P1T3R/Desktop/InceptionV3/output/Violence', exist_ok=True)
+os.makedirs('./data/Violence/', exist_ok=True)
 for path in tqdm(glob.glob(PATH_violence + '/*')):
     fname = os.path.basename(path).split('.')[0]
     vidcap = cv2.VideoCapture(path)
@@ -36,12 +36,12 @@ for path in tqdm(glob.glob(PATH_violence + '/*')):
     count = 0
     while success:
         if count % 5 == 0:
-            cv2.imwrite("C:/Users/P1T3R/Desktop/InceptionV3/output/Violence/{}-{}.jpg".format(fname, str(count).zfill(4)),
+            cv2.imwrite("./data/Violence/{}-{}.jpg".format(fname, str(count).zfill(4)),
                         image)  # save frame as JPEG file
         success, image = vidcap.read()
         count += 1
 
-os.makedirs('C:/Users/P1T3R/Desktop/InceptionV3/output/NonViolence', exist_ok=True)
+os.makedirs('./data/NonViolence/', exist_ok=True)
 for path in tqdm(glob.glob(PATH_nonviolence + '/*')):
     fname = os.path.basename(path).split('.')[0]
     vidcap = cv2.VideoCapture(path)
@@ -49,8 +49,9 @@ for path in tqdm(glob.glob(PATH_nonviolence + '/*')):
     count = 0
     while success:
         if count % 5 == 0:
-            cv2.imwrite("C:/Users/P1T3R/Desktop/InceptionV3/output/NonViolence/{}-{}.jpg".format(fname, str(count).zfill(4)),
+            cv2.imwrite("./data/NonViolence/{}-{}.jpg".format(fname, str(count).zfill(4)),
                         image)  # save frame as JPEG file
+            success, image = vidcap.read()
         success, image = vidcap.read()
         count += 1
 
@@ -84,7 +85,7 @@ print('-' * 100)
 imagePaths = list(paths.list_images(args["dataset"]))
 data = []
 labels = []
-print(imagePaths)
+
 # loop over the image paths
 for imagePath in tqdm(imagePaths[::]):
     # imagePath : file name ex) V_123
@@ -235,8 +236,8 @@ args = {
 
     "model": "model/violence_model.h5",
     "label-bin": "model/lb.pickle",
-    "input": "C:/Users/P1T3R/Desktop/InceptionV3/dataset_ridotto/violenza/0H2s9UJcNJ0_5.avi",
-    "output": "C:/Users/P1T3R/Desktop/InceptionV3/output/streetfight_64avg.avi",
+    "input": "dataset/violenza/0H2s9UJcNJ0_5.avi",
+    "output": "output/streetfight_64avg.avi",
     "size": 64
 
 }

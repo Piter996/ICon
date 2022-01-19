@@ -1,3 +1,9 @@
 venv/
 CodiceOffline/dataset
 CodiceOffline/output/Violenza/1A3zEkCHBl8_1-0065.jpg
+CodiceOffline/model/violence_model.h5
+*.jpg
+*.gif
+*.avi
+*.png
+*.gif
