@@ -2,34 +2,31 @@
 
 class Sorveglianza:
 
-    def _init_(self):
+    def __init__(self):
         self.Y = []
         self.X = []
         self.ID = []
         self.type = []
 
-
-    def update_Y (self,Y):
+    def update_Y(self, Y):
         self.Y.append(Y)
         #print("Done!")
 
-    def update_X (self,X):
+    def update_X(self, X):
         self.X.append(X)
         #print("Done!")
 
-
-    def update_ID (self,ID):
+    def update_ID(self, ID):
         self.ID.append(ID)
         #print("Done!")
 
     # 0 = Vicolo, 1 = Via, 2 = Piazza
-    def update_TYPE (self,TYPE):
+    def update_TYPE(self, TYPE):
         self.type.append(TYPE)
         #print("Done!")
 
+    def show_CAM(self):
 
-    def show_CAM (self):
+        for i, h, j, k in zip(self.X, self.Y, self.ID, self.type):
 
-        for i,h,j,k in zip(self.X,self.Y,self.ID,self.type):
-
-            print(i , h , j, k)
+            print(i, h, j, k)

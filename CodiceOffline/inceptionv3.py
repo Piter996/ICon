@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+import Main
 from collections import deque
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.model_selection import train_test_split
@@ -10,7 +10,7 @@ from tqdm import tqdm
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.applications import InceptionV3
 from tensorflow.keras.models import load_model
-from tensorflow.keras.layers import Dropout,Flatten,Dense,AveragePooling2D,Input
+from tensorflow.keras.layers import Dropout, Flatten, Dense, AveragePooling2D, Input
 from tensorflow.keras.models import Model
 from tensorflow.keras.optimizers import SGD
 from tensorflow.keras.utils import to_categorical
@@ -24,6 +24,10 @@ import numpy as np
 import pickle
 import cv2
 
+
+data1, data2, data3, data4 = Main.init_cam()
+
+quit()
 
 PATH_violence = 'dataset/violenza'
 PATH_nonviolence = 'dataset/nonViolenza'
