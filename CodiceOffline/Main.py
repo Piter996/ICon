@@ -40,8 +40,8 @@ def init_cam():
     data3 = Controller.update_ID
     data4 = Controller.update_TYPE
 
- Controller.show_CAM(Controller)
+ #Controller.show_CAM(Controller)
 
- print('done!')
+ #print('done!')
 
  return data1, data2, data3, data4

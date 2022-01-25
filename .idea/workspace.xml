@@ -2,23 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c786fc1-2e22-440f-ba67-6d70024f2ec2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/test_inception.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CodiceOffline/fileCounter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/ICon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ICon.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/test_inception.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/test_inception.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CodiceOffline/LinkCam.py" beforeDir="false" afterPath="$PROJECT_DIR$/CodiceOffline/LinkCam.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CodiceOffline/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/CodiceOffline/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CodiceOffline/Yolo/Yolo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CodiceOffline/Yolo/yolo configuration/yolov3.cfg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CodiceOffline/Yolo/yolo configuration/yolov3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CodiceOffline/Yolo/yolo configuration/yolov3.weights" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/CodiceOffline/inceptionv3.py" beforeDir="false" afterPath="$PROJECT_DIR$/CodiceOffline/inceptionv3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CodiceOffline/model/lb.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/CodiceOffline/model/lb.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodiceOffline/res/Video/AB.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodiceOffline/res/Video/abc.mov" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodiceOffline/res/outputprecessed_img0.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,7 +47,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/CodiceOffline/inceptionv3.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -90,6 +95,7 @@
       <workItem from="1642159159308" duration="20000000" />
       <workItem from="1642424195732" duration="2191000" />
       <workItem from="1642441340542" duration="17405000" />
+      <workItem from="1642695721271" duration="1000000" />
     </task>
     <servers />
   </component>
