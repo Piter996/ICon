@@ -1,10 +1,10 @@
-import pytholog as pl
 
+import pytholog as pl
 new_kb = pl.KnowledgeBase("Informatica")
 
-# base di conoscenza: insieme di asserzioni
+#base di conoscenza: insieme di asserzioni
 new_kb([
-    "insegna(fanizzi,icon)",  # insegna(Professore,Materia)
+    "insegna(fanizzi,icon)",          #insegna(Professore,Materia)
     "insegna(costabile,ium)",
     "insegna(lops,mri)",
     "insegna(novielli,reti)",
@@ -23,7 +23,7 @@ new_kb([
     "insegna(maggipinto,fisica)",
     "insegna(volpe,fisica)",
 
-    "in(aula4,palazzo_aule)",  # in(Aula,Edificio)
+    "in(aula4,palazzo_aule)",          #in(Aula,Edificio)
     "in(aula2,palazzo_aule)",
     "in(aula_b,dib)",
     "in(aula_a,dib)",
@@ -34,7 +34,7 @@ new_kb([
     "in(lab_turing,dib)",
     "in(lab_shannon,dib)",
 
-    "corso(di_terlizzi,a1)",  # corso(Professore,Anno_corso)
+    "corso(di_terlizzi,a1)",     #corso(Professore,Anno_corso)
     "corso(pirlo,a1)",
     "corso(abbattista,a1)",
     "corso(centrone,b1)",
@@ -57,7 +57,7 @@ new_kb([
     "corso(fanizzi,a3)",
     "corso(fanizzi,b3)",
 
-    "orario(di_terlizzi,h9,lunedi)",  # orario(Professore,Ora_inizio,Giorno)
+    "orario(di_terlizzi,h9,lunedi)",   #orario(Professore,Ora_inizio,Giorno)
     "orario(di_terlizzi,h12,martedi)",
     "orario(abbattista,h15,martedi)",
     "orario(abbattista,h9,mercoledi)",
@@ -107,21 +107,21 @@ new_kb([
     "orario(lops,h13,venerdi)",
     "orario(costabile,h16,venerdi)",
 
-    # lezione(Materia,Ora_inizio,Giorno,Professore):-insegna(Professore,Materia),orario(Professore,Ora_inizio,Giorno)
+    #lezione(Materia,Ora_inizio,Giorno,Professore):-insegna(Professore,Materia),orario(Professore,Ora_inizio,Giorno)
     "lezione(M,H,G,P):-insegna(P,M),orario(P,H,G)",
 
-    "classe(a1,aula4)",  # classe(Anno_corso,Aula)
+
+    "classe(a1,aula4)",         #classe(Anno_corso,Aula)
     "classe(b1,aula2)",
     "classe(a2,aula_1b)",
     "classe(b2,aula_1a)",
 
-    "luogo(C,X):-classe(C,A),in(A,X)"])  # luogo(Corso,Palazzo):-classe(Corso,Aula),in(Aula,Palazzo)
-
+    "luogo(C,X):-classe(C,A),in(A,X)"])  #luogo(Corso,Palazzo):-classe(Corso,Aula),in(Aula,Palazzo)
 
 def ask_KB(new_kb, x):
-    results = set()
+    results=set()
     print("Query: " + str(x))
-    y = new_kb.query(pl.Expr(x))
+    y=new_kb.query(pl.Expr(x))
 
     print("Risultati\n", y)
     # Elimina i duplicati dai risultati
@@ -131,5 +131,5 @@ def ask_KB(new_kb, x):
         results.add(s)
     return results
 
-# Esempio di utilizzo:
-# print(ask_KB(new_kb,"insegna(Q,discreta)") )
+#Esempio di utilizzo:
+#print(ask_KB(new_kb,"insegna(Q,discreta)") )        
