@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c786fc1-2e22-440f-ba67-6d70024f2ec2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CodiceOffline/fileCounter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ICon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ICon.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/test_inception.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/test_inception.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CodiceOffline/prolog/prolog.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CodiceOffline/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/CodiceOffline/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CodiceOffline/inceptionv3.py" beforeDir="false" afterPath="$PROJECT_DIR$/CodiceOffline/inceptionv3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CodiceOffline/res/Video/AB.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CodiceOffline/res/Video/abc.mov" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CodiceOffline/res/outputprecessed_img0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodiceOffline/Bayesian Network.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CodiceOffline/Bayesian Network.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodiceOffline/res/CamLocations/Luogo Telecamere.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CodiceOffline/res/CamLocations/Luogo Telecamere.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodiceOffline/res/doc/Documentazione.docx" beforeDir="false" afterPath="$PROJECT_DIR$/CodiceOffline/res/doc/Documentazione.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentazione.docx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
